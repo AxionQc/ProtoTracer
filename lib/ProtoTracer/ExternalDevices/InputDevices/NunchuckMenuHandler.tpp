@@ -133,20 +133,7 @@ void MenuHandler<menuCount>::Update() {
             if (currentValue[currentMenu] == 0) currentValue[currentMenu] = maxValue[currentMenu] - 1;
             lastActionTime = currentTime; 
         }
-        static unsigned long buttonZPressTime = 0;
 
-        if (controller.getButtonZ()) {  // Joystick button Z pressed
-            if (buttonZPressTime == 0) {
-            buttonZPressTime = currentTime;  // Record the time when the button is first pressed
-            currentValue[currentMenu] = 7;  // Set the value when the button is pressed
-            lastActionTime = currentTime;
-            }
-        } else {
-            if (buttonZPressTime != 0) {
-            currentValue[currentMenu] = 0;  // Reset the value when the button is released
-            buttonZPressTime = 0;  // Reset the press time
-            }
-        }
 
     }
 }

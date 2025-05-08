@@ -29,17 +29,17 @@ void ProtogenProject::SetMaterialLayers(){
     materialAnimator.AddMaterial(Material::Replace, &oSC, 20, 0.0f, 1.0f);
 
     backgroundMaterial.SetBaseMaterial(Material::Add, Menu::GetMaterial());
-    backgroundMaterial.AddMaterial(Material::Replace, &yellowMaterial, 40, 0.0f, 1.0f); // layer 1
-    backgroundMaterial.AddMaterial(Material::Replace, &orangeMaterial, 40, 0.0f, 1.0f); // layer 2
-    backgroundMaterial.AddMaterial(Material::Replace, &whiteMaterial, 40, 0.0f, 1.0f); // layer 3
-    backgroundMaterial.AddMaterial(Material::Replace, &greenMaterial, 40, 0.0f, 1.0f); // layer 4
-    backgroundMaterial.AddMaterial(Material::Replace, &purpleMaterial, 40, 0.0f, 1.0f); // layer 5
-    backgroundMaterial.AddMaterial(Material::Replace, &redMaterial, 40, 0.0f, 1.0f); // layer 6
-    backgroundMaterial.AddMaterial(Material::Replace, &blueMaterial, 40, 0.0f, 1.0f); // layer 7
-    backgroundMaterial.AddMaterial(Material::Replace, &flowNoise, 40, 0.0f, 1.0f); // layer 8
-    backgroundMaterial.AddMaterial(Material::Replace, &rainbowSpiral, 40, 0.0f, 1.0f); // layer 9
-    backgroundMaterial.AddMaterial(Material::Replace, &hRainbow, 40, 0.0f, 1.0f); // layer 10
-    backgroundMaterial.AddMaterial(Material::Replace, &blackMaterial, 40, 0.0f, 1.0f); // layer 11
+    backgroundMaterial.AddMaterial(Material::Replace, &yellowMaterial, 40, 0.0f, 1.0f);//layer 1
+    backgroundMaterial.AddMaterial(Material::Replace, &orangeMaterial, 40, 0.0f, 1.0f);//layer 2
+    backgroundMaterial.AddMaterial(Material::Replace, &whiteMaterial, 40, 0.0f, 1.0f);//layer 3
+    backgroundMaterial.AddMaterial(Material::Replace, &greenMaterial, 40, 0.0f, 1.0f);//layer 4
+    backgroundMaterial.AddMaterial(Material::Replace, &purpleMaterial, 40, 0.0f, 1.0f);//layer 5
+    backgroundMaterial.AddMaterial(Material::Replace, &redMaterial, 40, 0.0f, 1.0f);//layer 6
+    backgroundMaterial.AddMaterial(Material::Replace, &blueMaterial, 40, 0.0f, 1.0f);//layer 7
+    backgroundMaterial.AddMaterial(Material::Replace, &flowNoise, 40, 0.0f, 1.0f);//layer 8
+    backgroundMaterial.AddMaterial(Material::Replace, &rainbowSpiral, 40, 0.0f, 1.0f);//layer 9
+    backgroundMaterial.AddMaterial(Material::Replace, &hRainbow, 40, 0.0f, 1.0f);//layer 10
+    backgroundMaterial.AddMaterial(Material::Replace, &blackMaterial, 40, 0.0f, 1.0f);//layer 11
     backgroundMaterial.AddMaterial(Material::Add, &sA, 20, 0.0f, 1.0f);
     backgroundMaterial.AddMaterial(Material::Add, &aRG, 20, 0.0f, 1.0f);
     backgroundMaterial.AddMaterial(Material::Add, &oSC, 20, 0.0f, 1.0f);
@@ -88,7 +88,7 @@ void ProtogenProject::UpdateFace(float ratio) {
 
     Menu::Update(ratio);
 
-    fanController.SetPWM(Menu::GetFanSpeed() * 25.5);
+    fanController.SetPWM(Menu::GetFanSpeed() * 25);
     
     xOffset = fGenMatXMove.Update();
     yOffset = fGenMatYMove.Update();
@@ -137,9 +137,7 @@ void ProtogenProject::UpdateFace(float ratio) {
     hRainbow.Update(ratio);
     materialAnimator.Update();
     backgroundMaterial.Update();
-    blushsequence.Update(); 
-    bombsequence.Update();
-    aperturesequence.Update();
+    bonksequence.Update();
 
     uint8_t faceSize = Menu::GetFaceSize();
     float scale = Menu::ShowMenu() * 0.6f + 0.4f;

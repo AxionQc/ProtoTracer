@@ -25,7 +25,7 @@
  * @def PRINTINFO
  * @brief Define this macro to enable printing live stats, such as FPS and other information.
  */
-//#define PRINTINFO
+#define PRINTINFO
 #if DOXYGEN
 #define PRINTINFO
 #endif
@@ -56,7 +56,7 @@
  *
  * If this macro is undefined, the button controller is used instead.
  */
-#define NUNCHUCKMENU
+//#define NUNCHUCKMENU
 #if DOXYGEN
 #define NUNCHUCKMENU
 #endif
