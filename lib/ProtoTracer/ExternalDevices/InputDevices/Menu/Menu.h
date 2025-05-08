@@ -32,6 +32,8 @@
 
 #ifdef NEOTRELLISMENU
 #include "../NeoTrellisMenuHandler.h"
+#elif defined NUNCHUCKMENU
+#include "../NunchuckMenuHandler.h"
 #elif defined MORSEBUTTON
 #include "../SingleButtonMorseHandler.h"
 #else
@@ -45,7 +47,7 @@
  *        microphone level, boop sensor, effects) and to navigate through menu items.
  *
  * The Menu system integrates a TextEngine-based UI, plus optional interactive
- * hardware inputs (button, NeoTrellis, etc.). It also provides visual "wiggle"
+ * hardware inputs (button, NeoTrellis, Nunchuck, etc.). It also provides visual "wiggle"
  * effects and manages transitions via DampedSpring.
  */
 class Menu {
@@ -196,7 +198,7 @@ public:
     /**
      * @brief Initializes the Menu using a face count, input pin, holding time, and size.
      *
-     * This overload is typically used in single-button mode (not NeoTrellis):
+     * This overload is typically used in single-button mode (not NeoTrellis or Nunchuck):
      * it sets up the DampedSpring, the text engine, and hardware input for user navigation.
      *
      * @param faceCount The maximum number of faces selectable.
@@ -210,7 +212,7 @@ public:
     /**
      * @brief Initializes the Menu using just a face count and size.
      *
-     * This overload is typically used with NeoTrellis or other forms of input:
+     * This overload is typically used with NeoTrellis, Nunchuck, or other forms of input:
      * it sets up the DampedSpring, text engine, and handles the menu logic in isSecondary mode.
      *
      * @param faceCount The maximum number of faces selectable.

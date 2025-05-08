@@ -111,7 +111,7 @@ void Menu::Initialize(uint8_t faceCount, uint8_t pin, uint16_t holdingTime, Vect
     textEngine.SetPositionOffset(position);
     textEngine.SetBlinkTime(200);
 
-#ifndef NEOTRELLISMENU
+#if !defined(NEOTRELLISMENU) && !defined(NUNCHUCKMENU) 
     if (!MenuHandler<menuCount>::Initialize(pin, holdingTime)) {
         SetDefaultEntries();
     }
@@ -119,7 +119,7 @@ void Menu::Initialize(uint8_t faceCount, uint8_t pin, uint16_t holdingTime, Vect
 
     SetMaxEntries();
 
-#ifndef NEOTRELLISMENU
+#if !defined(NEOTRELLISMENU) && !defined(NUNCHUCKMENU) 
     MenuHandler<menuCount>::Begin();
 #endif
     isSecondary = false;
@@ -139,7 +139,7 @@ void Menu::Initialize(uint8_t faceCount, Vector2D size) {
     textEngine.SetPositionOffset(position);
     textEngine.SetBlinkTime(200);
 
-#ifdef NEOTRELLISMENU
+#if defined(NEOTRELLISMENU) || defined(NUNCHUCKMENU) 
     if (!MenuHandler<menuCount>::Initialize()) {
         SetDefaultEntries();
     }
@@ -206,7 +206,7 @@ void Menu::SetCurrentMenu(uint8_t currentMenu) {
 }
 
 void Menu::Update(float ratio) {
-#if defined NEOTRELLISMENU || defined MORSEBUTTON
+#if defined NEOTRELLISMENU || defined NUNCHUCKMENU
     MenuHandler<menuCount>::Update();
 #endif
 
