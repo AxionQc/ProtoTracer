@@ -122,15 +122,20 @@ void MenuHandler<menuCount>::Update() {
     }
     else
     {
-
-        if (controller.getJoyX() > 200) {  // Joystick moved right
-            currentValue[currentMenu] += 1;
-            if (currentValue[currentMenu] >= maxValue[currentMenu]) currentValue[currentMenu] = 0;
+        if (controller.getJoyY() > 200) {  // Joystick moved right
+            currentValue[currentMenu] = 0;
             lastActionTime = currentTime; 
-        } 
-        else if (controller.getJoyX() < 50) {  // Joystick moved left
-            currentValue[currentMenu] -= 1;
-            if (currentValue[currentMenu] == 0) currentValue[currentMenu] = maxValue[currentMenu] - 1;
+        
+        }
+        else if (controller.getJoyY() < 50) {  // Joystick moved left
+            currentValue[currentMenu] = 6;
+            lastActionTime = currentTime; 
+        }
+        else if (controller.getJoyX() > 200) {  // Joystick moved right
+            currentValue[currentMenu] = 1;
+            lastActionTime = currentTime; 
+        } else if (controller.getJoyX() < 50) {  // Joystick moved left
+            currentValue[currentMenu] = 2;
             lastActionTime = currentTime; 
         }
         static unsigned long buttonZPressTime = 0;
@@ -138,7 +143,7 @@ void MenuHandler<menuCount>::Update() {
         if (controller.getButtonZ()) {  // Joystick button Z pressed
             if (buttonZPressTime == 0) {
             buttonZPressTime = currentTime;  // Record the time when the button is first pressed
-            currentValue[currentMenu] = 7;  // Set the value when the button is pressed
+            currentValue[currentMenu] = 10;  // Set the value when the button is pressed
             lastActionTime = currentTime;
             }
         } else {

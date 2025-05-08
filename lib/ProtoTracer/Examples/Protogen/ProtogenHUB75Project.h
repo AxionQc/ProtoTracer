@@ -180,7 +180,7 @@ public:
                 SetBackgroundMaterial(GetBackgroundMaterial());
                 isObjectInScene = true;
             }
-        }
+        
         UpdateFace(ratio); 
 
         controller.SetBrightness(Menu::GetBrightness());
@@ -204,8 +204,9 @@ public:
             pM.GetObject()->UpdateTransform();
         }
 
-    }
+    
 
+}
   void SelectFace(uint8_t code) {
         if (IsBooped() && code != 6) {
             Surprised();
@@ -225,24 +226,5 @@ public:
         }
     }
 
-    void SelectFaceFromMorse(uint8_t code) {
-        if (IsBooped() && code != 24) {
-            Surprised();
-            return;
-        }
 
-        switch(code) {
-            case 1: Angry();        break; // [A]ngry
-            case 2: Surprised();    break; // [B]lush
-            case 4: Doubt();        break; // [D]oubt
-            case 6: Frown();        break; // [F]rown
-            case 19: Sad();         break; // [S]ad
-            case 21: LookUp();      break; // Look [U]p
-            case 22: LookDown();    break; // Look [V] Down
-            case 24: AudioReactiveGradientFace();   break; // [X] X.X
-            case 25: OscilloscopeFace();            break; // [Y] Oscilloscope
-            case 26: SpectrumAnalyzerFace();        break; // [Z] Spectrum
-            default: Default();     break; // [H] Happy
-        }
-    }
 };
