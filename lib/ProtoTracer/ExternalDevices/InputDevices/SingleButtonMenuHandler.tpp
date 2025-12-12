@@ -87,6 +87,7 @@ bool MenuHandler<menuCount>::Initialize(uint8_t pin, uint16_t holdingTime) {
     for (uint8_t i = 0; i < menuCount; i++) {
         currentValue[i] = ReadEEPROM(i);
     }
+    currentValue[0] = 0;
 
     return ReadEEPROM(menuCount + 1) != 255;
 }
