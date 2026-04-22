@@ -77,6 +77,8 @@ private:
     static const uint8_t PrototracerSplash[];
     static const uint8_t FaceTemplate[];
 
+    const IPixelGroup* facePixels;
+
     /**
      * @brief Resets the display buffer to a blank state.
      */
