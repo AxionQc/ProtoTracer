@@ -22,4 +22,8 @@ private:
 
 public:
     HUB75DeltaCameraManager() : CameraManager(new CameraBase*[3]{ &camMain, &camSidePanelsL, &camSidePanelsR }, 3) {}
+
+    IPixelGroup* GetMainPixelGroup() {
+        return &(this->camPixels);
+    }
 };

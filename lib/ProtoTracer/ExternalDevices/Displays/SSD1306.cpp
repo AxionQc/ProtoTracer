@@ -219,6 +219,10 @@ void HeadsUpDisplay::SetFaceArray(const __FlashStringHelper** faceNames) {
     useExternalFace = true;
 }
 
+void HeadsUpDisplay::SetFacePixelArray(const IPixelGroup* pixelGroup) {
+    this->facePixels = pixelGroup;
+}
+
 void HeadsUpDisplay::SetFaceMin(Vector2D faceMin) {
     this->faceMin = faceMin;
 }
