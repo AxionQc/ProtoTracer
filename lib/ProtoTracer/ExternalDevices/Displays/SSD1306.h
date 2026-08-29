@@ -165,4 +165,11 @@ public:
      * @param str The string to print.
      */
     void CheckInvertPrintText(int16_t x, int16_t y, uint8_t menu, const String& str);
+
+    /**
+     * @brief Sets the array of face pixels.
+     *
+     * @param pixelGroup Pointer to the pixel group representing the face.
+     */
+    void SetFacePixelArray(const IPixelGroup* pixelGroup);
 };

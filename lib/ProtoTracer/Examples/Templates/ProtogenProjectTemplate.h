@@ -14,6 +14,7 @@
 #include "../../Assets/Models/OBJ/Background.h"
 #include "../../ExternalDevices/InputDevices/Menu/Menu.h"
 #include "../../ExternalDevices/Sensors/APDS9960.h"
+#include "../../ExternalDevices/Sensors/APDS9999.h"
 #include "../../ExternalDevices/Displays/SSD1306.h"
 #include "../../ExternalDevices/Sensors/Microphone/MicrophoneFourier_MAX9814.h"
 #include "../../ExternalDevices/OutputDevices/FanController.h"
@@ -154,7 +155,8 @@ private:
     /**
      * @brief Gesture sensor used for detecting "boops."
      */
-    APDS9960 boop;
+    APDS9960 boop60;
+    APDS9999 boop99;
 
     /**
      * @brief Voice detection system based on FFT data.
