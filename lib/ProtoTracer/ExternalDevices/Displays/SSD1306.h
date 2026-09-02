@@ -114,6 +114,13 @@ public:
     void SetFaceArray(const __FlashStringHelper** faceNames);
 
     /**
+     * @brief Sets the face pixel array so it's not drawn to the HUD.
+     *
+     * @param faceNames Pointer to the array of face pixels.
+     */
+    void SetFacePixelArray(const IPixelGroup* pixelGroup);
+
+    /**
      * @brief Sets the minimum face rendering coordinates.
      *
      * @param faceMin Minimum coordinates for face rendering.
