@@ -1,11 +1,11 @@
 /**
- * @file APDS9960.h
- * @brief A class for interfacing with the Adafruit APDS9960 sensor.
+ * @file APDS9999.h
+ * @brief A class for interfacing with the Adafruit APDS9999 sensor.
  *
- * This file defines the APDS9960 class, which provides functionality for detecting proximity,
+ * This file defines the APDS9999 class, which provides functionality for detecting proximity,
  * brightness, and determining if the sensor is "booped" (close proximity detection).
  *
- * @date 22/12/2024
+ * @date 1/9/2026
  * @author Coela Can't, AxionQC
  */
 
